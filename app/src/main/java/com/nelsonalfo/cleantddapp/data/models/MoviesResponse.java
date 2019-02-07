@@ -1,14 +1,10 @@
 package com.nelsonalfo.cleantddapp.data.models;
 
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-
-
-/**
- * Created by nelso on 26/12/2017.
- */
 
 public class MoviesResponse {
     @SerializedName("page")
