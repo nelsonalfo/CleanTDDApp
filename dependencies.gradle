@@ -1,0 +1,188 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+    }
+}
+
+ext {
+
+    //Bci Libraries re-v3-3-0
+    coreVersion = '1.3.0'
+    widgetsVersion = '1.10.0'
+    commonsVersion = '1.10.0'
+    crmVersion = '1.2.3'
+    entrustVersion = '1.3.0'
+
+    //Android libraries
+    appCompatVersion = '27.1.1'
+    constraintVersion = '1.1.2'
+    googleAnalyticsVersion = '12.0.1'
+    firebaseVersion = '12.0.1'
+
+    //Third party libraries A to Z
+    apacheCommonsVersion = '3.5'
+    androidanimationsVersion = '2.3'
+    androidImageCropperVersion = '2.4.+'
+    butterKnifeVersion = '8.8.1'
+    calligraphyVersion = '2.2.0'
+    circleindicatorVersion = '1.2.2'
+    commonsLang3 = '3.7'
+    cropperVersion = '2.7.0'
+    daggerVersion = '2.15'
+    dynatraceVersion = '7.1.9.2321'
+    easingVersion = '2.0'
+    ednJavaVersion = '0.5.0'
+    eventBusVersion = '3.1.1'
+    gsonVersion = '2.8.2'
+    javaxAnnotationsVersion = '1.0'
+    javaxInjectVersion = '1'
+    lifecycleVersion = '1.1.1'
+    lottieVersion = '2.2.0'
+    lombokVersion = '1.16.20'
+    loopingViewPagerVersion = "1.1.2"
+    mirrajabiJsonMockVersion = '1.1.1'
+    multidexVersion = '1.0.3'
+    nvanbenschotenVersion = '1.1.2'
+    okhttpVersion = '3.10.0'
+    parcelerApiVersion = '1.1.10'
+    paginVersion = "0.9.9"
+    picassoVersion = '2.71828'
+    reboundFacebookVersion = '0.3.8'
+    retrofitVersion = '2.4.0'
+    rxJavaVersion = '2.1.12'
+    rxAndroidVersion = '2.0.2'
+    scottyabRootVersion = '0.0.6'
+    shimmerLayoutVersion = '2.0.0'
+    skeletonVersion = '1.1.0'
+    stethoVersion = '1.4.2'
+    svgImageLoaderVersion = '1.0.1'
+    timberVersion = '4.7.1'
+    topsnackbarVersion = '1.1.1'
+    usabillaVersion = '3.4.4'
+    pdfViewerVersion = '2.8.2'
+
+    //Unit Testing
+    robolectricVersion = '3.8'
+    robolectricShadowVersion = '3.3.2'
+    junitVersion = '4.12'
+    mockitoVersion = '2.12.0'
+    truthVersion='0.40'
+
+    //Acceptance Testing
+    assertjVersion = '1.1.1'
+    espressoVersion = '3.0.1'
+    espressoContribVersion = '2.2.1'
+    espressoResourceVersion = '3.0.2'
+    testRunnerVersion = '1.0.1'
+    hamcrestVersion = "1.3"
+    commonsIoVersion = "2.5"
+
+    //Development
+    leakCanaryVersion = '1.5'
+    //Graphics
+    renderscriptVersion = 21
+
+    daggerMockVersion = '0.8.4'
+
+    mainApplication = [
+            bciCommons              : "cl.bci.app.android:commons:$commonsVersion",
+            bciCore                 : "cl.bci.app.android:core:$coreVersion",
+            bciWidgets              : "cl.bci.app.android:bciwidgets:$widgetsVersion",
+            bciCrm                  : "cl.bci.app.android:crm:$crmVersion",
+            bciEntrust              : "cl.bci.app.android:entrust:$entrustVersion",
+            androidAnimations       : "com.daimajia.androidanimations:library:$androidanimationsVersion@aar",
+            androidImageCropper     : "com.theartofdev.edmodo:android-image-cropper:$androidImageCropperVersion",
+            appCompat               : "com.android.support:appcompat-v7:$appCompatVersion",
+            appCompatSupportV4      : "com.android.support:support-v4:$appCompatVersion",
+            appCompatSupportV13     : "com.android.support:support-v13:$appCompatVersion",
+            archCoreTesting         : "android.arch.core:core-testing:$lifecycleVersion",
+            butterKnife             : "com.jakewharton:butterknife:$butterKnifeVersion",
+            butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
+            calligraphy             : "uk.co.chrisjenx:calligraphy:$calligraphyVersion",
+            cardView                : "com.android.support:cardview-v7:$appCompatVersion",
+            circleIndicator         : "me.relex:circleindicator:$circleindicatorVersion@aar",
+            constraintLayout        : "com.android.support.constraint:constraint-layout:$constraintVersion",
+            commonsLang3            : "org.apache.commons:commons-lang3:$commonsLang3",
+            dagger                  : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid           : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerAndroidSupport    : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerAndroidProcessor  : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
+            design                  : "com.android.support:design:$appCompatVersion",
+            dynatrace               : "com.dynatrace.agent:agent-android:$dynatraceVersion",
+            easingAnimations        : "com.daimajia.easing:library:$easingVersion@aar",
+            ednJava                 : "us.bpsm:edn-java:$ednJavaVersion",
+            espressoIdlingRes       : "com.android.support.test.espresso:espresso-idling-resource:$espressoResourceVersion",
+            exifinterface           : "com.android.support:exifinterface:$appCompatVersion",
+            facebookRebound         : "com.facebook.rebound:rebound:$reboundFacebookVersion",
+            firebaseMessaging       : "com.google.firebase:firebase-messaging:$firebaseVersion",
+            googleAnalytics         : "com.google.android.gms:play-services-analytics:$googleAnalyticsVersion",
+            gson                    : "com.google.code.gson:gson:$gsonVersion",
+            lifecycleCommon         :"android.arch.lifecycle:common-java8:$lifecycleVersion",
+            lifecycleExtension      : "android.arch.lifecycle:extensions:$lifecycleVersion",
+            lifecycleViewmodel      : "android.arch.lifecycle:viewmodel:$lifecycleVersion",
+            lottie                  : "com.airbnb.android:lottie:$lottieVersion",
+            lombok                  : "org.projectlombok:lombok:$lombokVersion",
+            loopingViewPager        : "com.asksira.android:loopingviewpager:$loopingViewPagerVersion",
+            mirrajabiJsonMock       : "com.github.mirrajabi:okhttp-json-mock:$mirrajabiJsonMockVersion",
+            multidex                : "com.android.support:multidex:$multidexVersion",
+            nVanbenSchotenAnimation : "com.nvanbenschoten.motion:library:$nvanbenschotenVersion",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            pagin                   : "ru.alexbykov:nopaginate:$paginVersion",
+            parcelerApi             : "org.parceler:parceler-api:$parcelerApiVersion",
+            parceler                : "org.parceler:parceler:$parcelerApiVersion",
+            picasso                 : "com.squareup.picasso:picasso:$picassoVersion",
+            recyclerView            : "com.android.support:recyclerview-v7:$appCompatVersion",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson            : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitAdapterRx       : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            rxJava                  : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rootbeer                : "com.scottyab:rootbeer-lib:$scottyabRootVersion",
+            shimmerLayout                : "io.supercharge:shimmerlayout:$shimmerLayoutVersion",
+            skeleton                : "com.ethanhua:skeleton:$skeletonVersion",
+            stetho                  : "com.facebook.stetho:stetho:$stethoVersion",
+            stethoOkHttp            : "com.facebook.stetho:stetho-okhttp3:$stethoVersion",
+            svgImageLoader          : "com.github.ar-android:AndroidSvgLoader:$svgImageLoaderVersion",
+            supportMediaCompat:         "com.android.support:support-media-compat:$appCompatVersion",
+            supportVectorDrawable   : "com.android.support:support-vector-drawable:$appCompatVersion",
+            timber                  : "com.jakewharton.timber:timber:$timberVersion",
+            topsnackbar             : "com.androidadvance:topsnackbar:$topsnackbarVersion",
+            usabilla                : "com.usabilla.sdk:ubform:$usabillaVersion",
+            pdfViewer               : "com.github.barteksc:android-pdf-viewer:$pdfViewerVersion",
+    ]
+
+    unitTesting = [
+            robolectric      : "org.robolectric:robolectric:$robolectricVersion",
+            robolectricShadow: "org.robolectric:shadows-support-v4:$robolectricShadowVersion",
+            junit            : "junit:junit:$junitVersion",
+            mockito          : "org.mockito:mockito-core:$mockitoVersion",
+            retrofitMock     : "com.squareup.retrofit2:retrofit-mock:$retrofitVersion",
+            hamcrest         : "org.hamcrest:hamcrest-library:$hamcrestVersion",
+            assertjAndroid   : "com.squareup.assertj:assertj-android:$assertjVersion",
+            mockWebServer    : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+            commonsIo        : "commons-io:commons-io:$commonsIoVersion",
+            daggerMock       : "com.github.fabioCollini.daggermock:daggermock:$daggerMockVersion",
+            truth            : "com.google.truth:truth:$truthVersion",
+    ]
+
+    acceptanceTesting = [
+            hamcrestCore       : "org.hamcrest:hamcrest-core:$hamcrestVersion",
+            hamcrestLibrary    : "org.hamcrest:hamcrest-library:$hamcrestVersion",
+            hamcrestIntegration: "org.hamcrest:hamcrest-integration:$hamcrestVersion",
+            testRunner         : "com.android.support.test:runner:$testRunnerVersion",
+            testRules          : "com.android.support.test:rules:$testRunnerVersion",
+            espressoContrib    : "com.android.support.test.espresso:espresso-contrib:$espressoContribVersion",
+            espressoCore       : "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            espressoIntents    : "com.android.support.test.espresso:espresso-intents:$espressoVersion",
+            androidAnnotations : "com.android.support:support-annotations:$appCompatVersion",
+    ]
+
+    development = [
+            leakCanary    : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            leakCanaryNoop: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+
+    ]
+}
