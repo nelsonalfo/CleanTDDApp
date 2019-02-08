@@ -22,8 +22,8 @@ import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 import retrofit2.Response;
 
-import static com.nelsonalfo.cleantddapp.data.datasource.remote.StubFactory.createError401;
-import static com.nelsonalfo.cleantddapp.data.datasource.remote.StubFactory.createMovieResponseStub;
+import static com.nelsonalfo.cleantddapp.StubFactory.createError401;
+import static com.nelsonalfo.cleantddapp.StubFactory.createMovieResponseStub;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;

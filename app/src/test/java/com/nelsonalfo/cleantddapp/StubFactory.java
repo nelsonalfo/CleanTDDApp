@@ -1,7 +1,9 @@
-package com.nelsonalfo.cleantddapp.data.datasource.remote;
+package com.nelsonalfo.cleantddapp;
 
 import com.nelsonalfo.cleantddapp.data.models.MovieResume;
 import com.nelsonalfo.cleantddapp.data.models.MoviesResponse;
+import com.nelsonalfo.cleantddapp.domain.entities.MovieListEntity;
+import com.nelsonalfo.cleantddapp.domain.entities.MovieResumeEntity;
 
 import java.util.Arrays;
 
@@ -34,5 +36,16 @@ public final class StubFactory {
                         "         \"body\": \"Número de celular invalido\"\n" +
                         "     }\n" +
                         "}")));
+    }
+
+    public static MovieListEntity createMovieListEntityStub() {
+        final MovieListEntity movieListEntity = new MovieListEntity();
+        movieListEntity.page = 1;
+        movieListEntity.totalPages = 1;
+        movieListEntity.totalResults = 2;
+
+        movieListEntity.results = Arrays.asList(new MovieResumeEntity(1, "Titanic"), new MovieResumeEntity(2, "Avatar"));
+
+        return movieListEntity;
     }
 }

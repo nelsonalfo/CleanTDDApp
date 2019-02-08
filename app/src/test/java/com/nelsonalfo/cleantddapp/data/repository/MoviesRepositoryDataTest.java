@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import io.reactivex.Single;
 import io.reactivex.observers.TestObserver;
 
-import static com.nelsonalfo.cleantddapp.data.datasource.remote.StubFactory.createMovieResponseStub;
+import static com.nelsonalfo.cleantddapp.StubFactory.createMovieResponseStub;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import io.reactivex.Single;
 
-class MoviesRepositoryData implements MoviesRepository {
+public class MoviesRepositoryData implements MoviesRepository {
     private MoviesDataSource dataSource;
 
     public MoviesRepositoryData(MoviesDataSource dataSource) {
