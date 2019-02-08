@@ -5,26 +5,19 @@ import com.nelsonalfo.cleantddapp.commons.rxjava.ThreadExecutor;
 import com.nelsonalfo.cleantddapp.domain.entities.MovieListEntity;
 import com.nelsonalfo.cleantddapp.domain.repository.MoviesRepository;
 
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.Single;
 
-public class GetMostPopularMoviesUseCase {
+public class GetMostPopularMoviesUseCase extends SingleUseCase<MovieListEntity> {
     private MoviesRepository repository;
-    private Disposable disposable;
-    private ThreadExecutor threadExecutor;
-    private PostExecutionThread postExecutionThread;
 
 
     public GetMostPopularMoviesUseCase(ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread, MoviesRepository repository) {
-        this.threadExecutor = threadExecutor;
-        this.postExecutionThread = postExecutionThread;
+        super(threadExecutor, postExecutionThread);
         this.repository = repository;
     }
 
-    public void execute(Consumer<MovieListEntity> capture, Consumer<Throwable> throwableConsumer) {
-        disposable = repository.getMostPopularMovies()
-                .subscribeOn(threadExecutor.getScheduler())
-                .observeOn(postExecutionThread.getScheduler())
-                .subscribe(capture, throwableConsumer);
+    @Override
+    protected Single<MovieListEntity> buildUseCase() {
+        return repository.getMostPopularMovies();
     }
 }
