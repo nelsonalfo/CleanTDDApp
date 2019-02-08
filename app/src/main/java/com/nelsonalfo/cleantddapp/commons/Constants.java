@@ -1,4 +1,4 @@
-package com.nelsonalfo.cleantddapp.data.api;
+package com.nelsonalfo.cleantddapp.commons;
 
 /**
  * Created by nelso on 26/12/2017.

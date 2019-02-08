@@ -1,6 +1,8 @@
-package com.nelsonalfo.cleantddapp.data.api;
+package com.nelsonalfo.cleantddapp.commons.network;
 
 import android.content.Context;
+
+import com.nelsonalfo.cleantddapp.data.api.TheMovieDbRestApi;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -8,17 +10,17 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.nelsonalfo.cleantddapp.data.api.Constants.API_BASE_URL;
+import static com.nelsonalfo.cleantddapp.commons.Constants.API_BASE_URL;
 
 
 /**
  * Created by nelso on 26/12/2017.
  */
 
-public class ApiServiceGenerator {
+public class NetworkModule {
     private final Retrofit retrofit;
 
-    public ApiServiceGenerator(Context context) {
+    public NetworkModule(Context context) {
         final HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
 
         final OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
