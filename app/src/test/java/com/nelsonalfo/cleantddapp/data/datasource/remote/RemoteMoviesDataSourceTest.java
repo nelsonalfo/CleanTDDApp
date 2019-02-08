@@ -22,7 +22,7 @@ import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 import retrofit2.Response;
 
-import static com.nelsonalfo.cleantddapp.StubFactory.createError401;
+import static com.nelsonalfo.cleantddapp.StubFactory.createError401Stub;
 import static com.nelsonalfo.cleantddapp.StubFactory.createMovieResponseStub;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -63,7 +63,7 @@ public class RemoteMoviesDataSourceTest {
 
     @Test
     public void given_apiReturnError401_when_getMostPopularMovies_then_returnClientErrorException() {
-        final HttpException error = createError401();
+        final HttpException error = createError401Stub();
         doReturn(Single.error(error)).when(api).getMovies(eq(Constants.MOST_POPULAR_MOVIES), eq(Constants.API_KEY));
 
         final TestObserver<MoviesResponse> test = dataSource.getMostPopularMovies().test();
