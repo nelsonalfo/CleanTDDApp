@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nelsonalfo.cleantddapp.R;
-import com.nelsonalfo.cleantddapp.presentation.models.MovieResume;
+import com.nelsonalfo.cleantddapp.presentation.models.MovieResumeViewModel;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -31,7 +31,7 @@ class MoviesViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    public void bind(MovieResume movieResume) {
+    public void bind(MovieResumeViewModel movieResume) {
         String posterImageUrl = movieResume.posterImageUrl;
         Picasso.get().load(posterImageUrl).into(moviePoster);
 

@@ -36,15 +36,12 @@ public class MoviesDataSourceRemoteTest {
     @Mock
     private ResponseBody responseBody;
 
-    @Mock
-    private TmdbConfiguration tmdbConfiguration;
-
-    private MoviesDataSourceRemote dataSource;
+    private TMDbDataSourceRemote dataSource;
 
 
     @Before
     public void setUp() throws Exception {
-        dataSource = new MoviesDataSourceRemote(api);
+        dataSource = new TMDbDataSourceRemote(api);
     }
 
     @Test
@@ -75,15 +72,15 @@ public class MoviesDataSourceRemoteTest {
         final TestObserver<MoviesResponse> testObserver = dataSource.fetchPopularMovies().test();
 
         testObserver.assertSubscribed();
-        testObserver.assertError(expectedError -> expectedError instanceof ServerErrorException);
+        testObserver.assertError(ServerErrorException.class);
     }
 
-    //Get configuration
-
+    // TODO no enrrollarse llenar todos los campos del objeto con data, sino la necesaria para verificar que lo que quieren testear este correcto
+    // TODO la instanciacion del objeto TmdbConfiguration se puede pasar a un metodo aparte para que el test quede mas limpio
     @Test
-    public void given_apiReturnTmbConfig_when_getConfiguration_then_returnTmbConfiguration(){
+    public void given_apiReturnTmbConfig_when_getConfiguration_then_returnTmbConfiguration() {
 
-        final TmdbConfiguration  tmdbConfiguration = new TmdbConfiguration();
+        final TmdbConfiguration tmdbConfiguration = new TmdbConfiguration();
         Images images = new Images();
         images.baseUrl = "htt://images";
         List<String> sizesList = new ArrayList<>();
@@ -114,8 +111,9 @@ public class MoviesDataSourceRemoteTest {
 
     }
 
+    //TODO El nombre del test no tiene que ver con lo que se esta testeando
     @Test
-    public void given_apiReturnTmbConfig_when_getConfiguration_then_returnConfigurationError(){
+    public void given_apiReturnError500_when_getConfiguration_then_returnServerError() {
         Throwable error = new HttpException((Response.error(500, responseBody)));
         doReturn(Single.error(error)).when(api).getConfiguration(Constants.API_KEY);
 

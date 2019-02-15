@@ -7,15 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nelsonalfo.cleantddapp.R;
-import com.nelsonalfo.cleantddapp.presentation.models.MovieResume;
+import com.nelsonalfo.cleantddapp.presentation.models.MovieResumeViewModel;
 
 import java.util.List;
 
 class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
-    private final List<MovieResume> dataSet;
+    private final List<MovieResumeViewModel> dataSet;
 
 
-    public MoviesAdapter(List<MovieResume> movies) {
+    public MoviesAdapter(List<MovieResumeViewModel> movies) {
         dataSet = movies;
     }
 
@@ -30,7 +30,7 @@ class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
     @Override
     public void onBindViewHolder(final MoviesViewHolder holder, int position) {
         if (dataSet != null && !dataSet.isEmpty()) {
-            final MovieResume movieResume = dataSet.get(position);
+            final MovieResumeViewModel movieResume = dataSet.get(position);
             holder.bind(movieResume);
         }
     }

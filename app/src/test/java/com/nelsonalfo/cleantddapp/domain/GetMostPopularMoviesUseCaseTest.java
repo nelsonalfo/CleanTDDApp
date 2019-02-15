@@ -3,6 +3,7 @@ package com.nelsonalfo.cleantddapp.domain;
 import com.nelsonalfo.cleantddapp.commons.exceptions.ServerErrorException;
 import com.nelsonalfo.cleantddapp.domain.entities.MoviesResponseEntity;
 import com.nelsonalfo.cleantddapp.domain.repository.MoviesRepository;
+import com.nelsonalfo.cleantddapp.domain.usecase.GetMostPopularMoviesUseCase;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +23,7 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 @RunWith(MockitoJUnitRunner.class)
 public class GetMostPopularMoviesUseCaseTest {
 
-    private TestScheduler backScheduler;
-    private TestScheduler uiScheduler;
+    private TestScheduler testScheduler;
 
     @Mock
     private MoviesRepository repository;
@@ -36,10 +36,8 @@ public class GetMostPopularMoviesUseCaseTest {
 
     @Before
     public void setUp() {
-        uiScheduler = new TestScheduler();
-        backScheduler = new TestScheduler();
-
-        useCase = new GetMostPopularMoviesUseCase(backScheduler, uiScheduler, repository);
+        testScheduler = new TestScheduler();
+        useCase = new GetMostPopularMoviesUseCase(testScheduler, testScheduler, repository);
     }
 
     @Test
@@ -48,8 +46,7 @@ public class GetMostPopularMoviesUseCaseTest {
         doReturn(Single.just(movies)).when(repository).getPopularMovies();
 
         useCase.execute(consumerSuccess, consumerError);
-        uiScheduler.triggerActions();
-        backScheduler.triggerActions();
+        testScheduler.triggerActions();
 
         verify(repository).getPopularMovies();
         verify(consumerSuccess).accept(eq(movies));
@@ -62,8 +59,7 @@ public class GetMostPopularMoviesUseCaseTest {
         doReturn(Single.error(exception)).when(repository).getPopularMovies();
 
         useCase.execute(consumerSuccess, consumerError);
-        uiScheduler.triggerActions();
-        backScheduler.triggerActions();
+        testScheduler.triggerActions();
 
         verify(repository).getPopularMovies();
         verify(consumerError).accept(eq(exception));

@@ -1,18 +1,18 @@
 package com.nelsonalfo.cleantddapp.data.repository;
 
 import com.nelsonalfo.cleantddapp.data.datasource.MoviesDataSource;
-import com.nelsonalfo.cleantddapp.data.mappers.MoviesMapper;
+import com.nelsonalfo.cleantddapp.data.mappers.TMDbMapper;
 import com.nelsonalfo.cleantddapp.domain.entities.MoviesResponseEntity;
 import com.nelsonalfo.cleantddapp.domain.entities.TmdbConfigurationEntity;
 import com.nelsonalfo.cleantddapp.domain.repository.MoviesRepository;
 
 import io.reactivex.Single;
 
-public class MoviesRepositoryData implements MoviesRepository {
+public class TMDbRepositoryData implements MoviesRepository {
     private MoviesDataSource dataSource;
-    private MoviesMapper mapper;
+    private TMDbMapper mapper;
 
-    public MoviesRepositoryData(MoviesDataSource dataSource, MoviesMapper mapper) {
+    public TMDbRepositoryData(MoviesDataSource dataSource, TMDbMapper mapper) {
         this.dataSource = dataSource;
         this.mapper = mapper;
     }

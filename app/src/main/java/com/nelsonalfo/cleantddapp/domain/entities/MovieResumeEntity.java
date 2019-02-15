@@ -22,6 +22,7 @@ public class MovieResumeEntity {
     public Boolean adult;
     public String overview;
     public String releaseDate;
+    public String posterUrl;
 
     public MovieResumeEntity() {
     }
@@ -29,5 +30,11 @@ public class MovieResumeEntity {
     public MovieResumeEntity(Integer id, String title) {
         this.id = id;
         this.title = title;
+    }
+
+    public MovieResumeEntity(Integer id, String title, String posterPath) {
+        this.id = id;
+        this.title = title;
+        this.posterPath = posterPath;
     }
 }
